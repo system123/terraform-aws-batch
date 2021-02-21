@@ -38,7 +38,7 @@ locals {
 module "compute_environment" {
   source                   = "./modules/compute_environment"
   service_name             = "${var.Name}"
-  compute_environment_name = "${var.Name}-MyComputeEnvironment"
+  compute_environment_name = "${var.Name}-${var.ce_name}"
   instance_type            = var.instance_type # ["optimal", ]
   maxvcpus                 = var.maxvcpus
   minvcpus                 = var.minvcpus
@@ -53,9 +53,9 @@ module "compute_environment" {
 # job queue
 module "pipeline-job_queue" {
   source                   = "./modules/job_queue"
-  job_queue_name           = "${var.Name}-${terraform.workspace}"
+  job_queue_name           = var.job_queue_name
   job_queue_priority       = var.job_queue_priority
-  compute_environment_list = ["${var.Name}-MyComputeEnvironment"]
+  compute_environment_list = ["${var.Name}-${var.ce_name}"]
 
   # tags
   resource_tags = local.common_tags
@@ -70,7 +70,7 @@ module "my_job_definition" {
   docker_ecr_link     = var.docker_repo_name
   jd_memory           = var.jd_memory
   jd_vcpus            = var.jd_vcpus
-  job_definition_name = "${var.Name}-${var.job_definition_name}-${terraform.workspace}"
+  job_definition_name = "${var.Name}-${var.job_definition_name}"
   iam_task_policy_actions = [
     "ec2:*",
     "logs:*",
