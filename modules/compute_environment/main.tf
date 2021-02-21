@@ -75,7 +75,7 @@ resource "aws_batch_compute_environment" "compute-environment" {
     security_group_ids = var.ce_security_groups
     subnets            = var.ce_subnets
 
-    type = "EC2"
+    type = var.ce_type
 
     tags = var.resource_tags
 

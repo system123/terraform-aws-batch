@@ -1,6 +1,6 @@
 module "batch" {
   source      = "iamlmn/batch/aws"
-  version     = "1.1.0"
+  version     = "0.5.0"
   Name        = "${var.Name}"
   Application = "${var.Application}"
 

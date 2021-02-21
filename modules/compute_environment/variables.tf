@@ -51,7 +51,11 @@ variable "environment" {
   default     = "dev"
 }
 
-
+variable "ce_type" {
+  description = "EC2 or SPOT"
+  type        = string
+  default     = "EC2"
+}
 
 ###################
 # tags variables ##
