@@ -18,6 +18,12 @@ variable "region" {
   default     = "us-east-1"
 }
 
+variable "ce_name" {
+  description = "Compute environment name"
+  type        = string
+  default     = ""
+}
+
 /*
 # VPC Setting
 variable "vpc_config" {
