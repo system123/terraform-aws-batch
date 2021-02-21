@@ -59,8 +59,7 @@ module "pipeline-job_queue" {
 
   # tags
   resource_tags = local.common_tags
-  jq_depends_on = [module.compute_environment.name]
-  # depends_on = ["module.compute_environment.name"] # this is not supported currently (0.12.26) but is expected to work fromm 0.13
+  depends_on = [module.compute_environment.name] # this is not supported currently (0.12.26) but is expected to work fromm 0.13
 
 }
 #jd

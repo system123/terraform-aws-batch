@@ -17,12 +17,6 @@ variable "compute_environment_list" {
   type        = list(string)
 }
 
-variable "jq_depends_on" {
-  type    = any
-  default = null
-}
-
-
 ###################
 # tags variables ##
 ###################
