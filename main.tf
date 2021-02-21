@@ -71,6 +71,7 @@ module "my_job_definition" {
   jd_memory           = var.jd_memory
   jd_vcpus            = var.jd_vcpus
   job_definition_name = "${var.Name}-${var.job_definition_name}"
+  region              = var.region
   iam_task_policy_actions = [
     "ec2:*",
     "logs:*",

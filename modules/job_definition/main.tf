@@ -57,7 +57,7 @@ resource "aws_batch_job_definition" "batch-jd" {
   container_properties = <<EOF
 {
     "command": ${jsonencode(var.jd_command)},
-    "image": "${data.aws_caller_identity.current.account_id}.dkr.ecr.us-east-1.amazonaws.com/${var.docker_ecr_link}",
+    "image": "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.region}.amazonaws.com/${var.docker_ecr_link}",
     "memory": ${var.jd_memory},
     "vcpus": ${var.jd_vcpus},
     "volumes": [],

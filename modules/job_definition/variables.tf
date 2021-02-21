@@ -63,3 +63,9 @@ variable "resource_tags" {
   description = "Custom tags to set on all the resources"
   type        = map(string)
 }
+
+variable "region" {
+  description = "Region"
+  default = "us-east-1"
+  type = string
+}
