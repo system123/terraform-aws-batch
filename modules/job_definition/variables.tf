@@ -32,8 +32,18 @@ variable "docker_ecr_link" {
 }
 
 variable "job_definition_container_properties" {
+  type        = "string"
   description = "A valid container properties provide as a single valid JSON document. This parameters is required if the type parameter is container"
-  default     = "./modules/batch/default_container_properties_dev.json"
+}
+
+variable "jd_volumes" {
+  description = "Volumes to mount in the container"
+  default = []
+}
+
+variable "jd_mountpoints" {
+  description = "Volumes to mount in the container"
+  default = []
 }
 
 variable "iam_task_policy_actions" {

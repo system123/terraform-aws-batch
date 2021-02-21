@@ -38,7 +38,6 @@ variable "vpc_config" {
 
 # Batch variables
 
-
 variable "instance_type" {
   description = "The instance_type for compute environment to use"
   type        = list(string)
@@ -89,6 +88,16 @@ variable "jd_memory" {
 variable "job_command" {
   description = "Job definition command"
   default     = ["ls", "-l"]
+}
+
+variable "jd_volumes" {
+  description = "Volumes to mount in the container"
+  default = []
+}
+
+variable "jd_mountpoints" {
+  description = "Volumes to mount in the container"
+  default = []
 }
 
 variable "job_definition_name" {

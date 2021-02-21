@@ -60,12 +60,10 @@ resource "aws_batch_job_definition" "batch-jd" {
     "image": "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.region}.amazonaws.com/${var.docker_ecr_link}",
     "memory": ${var.jd_memory},
     "vcpus": ${var.jd_vcpus},
-    "volumes": [],
+    "volumes": ${jsonencode(var.jd_volumes)},
     "jobRoleArn": "${aws_iam_role.aws_jd_task_role.arn}",
-    "environment": [
-        {"name": "ENV", "value": "dev"}
-    ],
-    "mountPoints": [],
+    "environment": [],
+    "mountPoints": ${jsonencode(var.jd_mountpoints)},
     "ulimits": []
 }
 EOF
