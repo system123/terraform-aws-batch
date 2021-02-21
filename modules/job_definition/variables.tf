@@ -31,11 +31,6 @@ variable "docker_ecr_link" {
   description = "The name of the job definitions"
 }
 
-variable "job_definition_container_properties" {
-  type        = "string"
-  description = "A valid container properties provide as a single valid JSON document. This parameters is required if the type parameter is container"
-}
-
 variable "jd_volumes" {
   description = "Volumes to mount in the container"
   default = []
