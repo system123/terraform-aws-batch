@@ -12,7 +12,7 @@ module "batch" {
   ce_subnets         = var.ce_subnets
 
   # job definitions
-  job_definition_name = "${var.job_definition_name
+  job_definition_name = var.job_definition_name
   docker_repo_name    = var.docker_repo_name
   jd_memory           = var.jd_memory
   jd_vcpus            = var.jd_vcpus
