@@ -11,6 +11,11 @@ variable "compute_environment_name" {
   description = "The name of the compute environment function"
 }
 
+variable "launch_template_name" {
+  description = "Launch template name"
+  default = null
+}
+
 variable "aws_batch_service_role-pp" {
   description = "The aws_batch_service_role name"
   default     = "aws_batch_service_role"

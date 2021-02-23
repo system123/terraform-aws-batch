@@ -63,6 +63,11 @@ variable "ce_subnets" {
   type        = list(string)
 }
 
+variable "ce_launch_template_name" {
+  description = "Launch template name"
+  default = null
+}
+
 # job_queue
 variable "job_queue_name" {
   description = "The name of the compute environment function"

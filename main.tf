@@ -45,6 +45,7 @@ module "compute_environment" {
   ce_security_groups       = local.env.security_group_ids
   ce_subnets               = local.env.subnets
   environment              = local.env.env_name
+  launch_template_name     = var.ce_launch_template_name
 
   # tags
   resource_tags = local.common_tags
