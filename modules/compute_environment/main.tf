@@ -69,7 +69,7 @@ resource "aws_batch_compute_environment" "compute-environment" {
     instance_role = "${aws_iam_instance_profile.ecs_instance_role.arn}"
 
     dynamic "launch_template" {
-      for_each = var.launch_template_name ? [1] : []
+      for_each = var.launch_template_name != "" ? [1] : []
       content {
         launch_template_name = var.launch_template_name
       }

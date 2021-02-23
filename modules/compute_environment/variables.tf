@@ -13,7 +13,7 @@ variable "compute_environment_name" {
 
 variable "launch_template_name" {
   description = "Launch template name"
-  default = null
+  default = ""
 }
 
 variable "aws_batch_service_role-pp" {
