@@ -53,6 +53,7 @@ variable "minvcpus" {
   description = "Min allowed Vcpus to be spun up by compute environment"
   default     = 0
 }
+
 variable "ce_security_groups" {
   description = "The ce_security_groups"
   type        = list(string)

@@ -82,7 +82,11 @@ module "my_job_definition" {
     "iam:GetRole",
     "autoscaling:*",
     "s3:*",
-    "secretsmanager:*"
+    "secretsmanager:*",
+    "sqs:*",
+    "sns:*",
+    "batch:*",
+    "ssm:*"
   ]
 
   iam_task_policy_resources = "*"
