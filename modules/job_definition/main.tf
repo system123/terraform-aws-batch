@@ -64,6 +64,7 @@ resource "aws_batch_job_definition" "batch-jd" {
     "jobRoleArn": "${aws_iam_role.aws_jd_task_role.arn}",
     "environment": [],
     "mountPoints": ${jsonencode(var.jd_mountpoints)},
+    "readonlyRootFilesystem": false,
     "ulimits": []
 }
 EOF
