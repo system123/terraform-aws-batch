@@ -71,7 +71,7 @@ variable "ce_launch_template_name" {
 
 variable "ce_ami_id" {
   description = "AMI ID if it is a custom AMI"
-  default = null
+  default = ""
 }
 
 # job_queue
