@@ -16,6 +16,11 @@ variable "launch_template_name" {
   default = ""
 }
 
+variable "ami_id" {
+  description = "AWS AMI to base the compute environment on"  
+  default = ""
+}
+
 variable "aws_batch_service_role-pp" {
   description = "The aws_batch_service_role name"
   default     = "aws_batch_service_role"

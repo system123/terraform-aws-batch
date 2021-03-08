@@ -80,6 +80,13 @@ resource "aws_batch_compute_environment" "compute-environment" {
     min_vcpus          = var.minvcpus
     security_group_ids = var.ce_security_groups
     subnets            = var.ce_subnets
+    
+    dynamic "image_id" {
+      for_each = var.ami_id != "" ? [1] : []
+      content {
+        image_id = var.ami_id
+      }
+    }
 
     type = var.ce_type
 

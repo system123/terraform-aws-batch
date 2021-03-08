@@ -69,6 +69,11 @@ variable "ce_launch_template_name" {
   default = null
 }
 
+variable "ce_ami_id" {
+  description = "AMI ID if it is a custom AMI"
+  default = null
+}
+
 # job_queue
 variable "job_queue_name" {
   description = "The name of the compute environment function"

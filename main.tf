@@ -46,6 +46,7 @@ module "compute_environment" {
   ce_subnets               = local.env.subnets
   environment              = local.env.env_name
   launch_template_name     = var.ce_launch_template_name
+  ami_id                   = var.ce_ami_id
 
   # tags
   resource_tags = local.common_tags
