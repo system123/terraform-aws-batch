@@ -72,6 +72,8 @@ module "my_job_definition" {
   docker_ecr_link     = var.docker_repo_name
   jd_memory           = var.jd_memory
   jd_vcpus            = var.jd_vcpus
+  jd_mountpoints      = var.jd_mountpoints
+  jd_volumes          = var.jd_volumes
   job_definition_name = "${var.Name}-${var.job_definition_name}"
   region              = var.region
   iam_task_policy_actions = [
